@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Kontak</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      label {
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 90%;
+        margin-bottom: 1px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #message {
+        margin-top: 20px;
+        font-size: 16px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Formulir Kontak</h2>
+    <form id="contactForm">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required /><br /><br />
+
+      <button type="button">Kirim</button>
+    </form>
+
+    <div id="message" class="success" style="display: none"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $("button").click(() => {
+        let nama = $("#name").val();
+        let email = $("#email").val();
+
+        console.log(`Nama: ${nama} \n Email: ${email}`);
+
+        $("#message").text(`Terima kasih, ${nama}, telah mendaftar!`).show();
+      });
+    </script>
+  </body>
+</html>
